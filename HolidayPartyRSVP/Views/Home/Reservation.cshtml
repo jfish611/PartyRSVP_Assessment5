@@ -1,0 +1,30 @@
+﻿@model HolidayPartyRSVP.Models.Reserve
+
+@{
+    ViewData["Title"] = "Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reservation</h1>
+<p>Please fill out the form below</p>
+
+<form action="Home/Reservation" method="post">
+
+    First Name: <input type="text" name="fname" /><br />
+    Last Name: <input type="text" name="lname" /><br />
+    Email: <input type="email" name="email" /><br />
+    Attending:
+    <select name="attending">
+    @{ string[] attending = AttendingMod.Attending;
+            foreach(string a in attending)
+        {
+            <option>@a</option>
+        }
+            }
+    </select>
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+     
+
+

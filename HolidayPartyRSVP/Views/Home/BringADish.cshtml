@@ -1,0 +1,30 @@
+﻿@model HolidayPartyRSVP.Models.DishOptions
+
+@{
+    ViewData["Title"] = "BringADish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>BringADish</h1>
+
+<form action="/Home/BringADish" method="post">
+
+
+    Name:<input type="text" name="name" /> <br />
+    Phone Number:<input type="text" name="name" /> <br />
+    Dish Name:<input type="text" name="name" /> <br />
+    Dish Description:<input type="text" name="name" /> <br />
+    Dietary Needs:
+    <select name="DietaryNeeds">
+        @{
+            string[] needs = DietaryNeeds.DietaryNeedsOptions;
+            foreach (string option in needs)
+            {
+                <option>@option</option>
+            }
+        }
+
+    </select>
+    <br />
+    <input type="submit" value="Submit" />
+</form>
